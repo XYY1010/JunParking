@@ -19,11 +19,14 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         />
     </FrameLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent"
         android:layout_gravity="start"
-        android:text="This is menu"
-        android:textSize="50sp"
-        android:background="#EEE"/>
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header"
+        />
+
 </android.support.v4.widget.DrawerLayout>
