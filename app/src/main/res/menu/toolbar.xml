@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/phone"
+        android:icon="@android:drawable/stat_sys_phone_call"
+        android:title="联系电话"
+        app:showAsAction = "always"/>
+
+</menu>
