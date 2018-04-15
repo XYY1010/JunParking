@@ -9,7 +9,6 @@ import java.net.URL;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
-import static android.R.string.ok;
 
 /**
  * Created by XYY on 2018/4/13.
