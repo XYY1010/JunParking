@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ParkActivity"
-                  android:label="小均停车"
+                  android:label="机场停车"
             android:theme="@style/ParkActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

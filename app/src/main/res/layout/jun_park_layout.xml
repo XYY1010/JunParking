@@ -32,7 +32,7 @@
                 <android.support.v4.view.ViewPager
                     android:id="@+id/viewPager"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="341px"
                     android:layout_below="@id/toolbar"
                     />
                 <LinearLayout
@@ -44,6 +44,28 @@
                     android:layout_marginTop="150sp"
                     android:layout_alignRight="@id/viewPager">
 
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="170sp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="#FFF3D3">
+                    <ImageView
+                        android:id="@+id/laba"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                         android:src="@mipmap/laba1"
+                        />
+                    <com.example.xyy.publicclass.VerticalTextview
+                        android:id="@+id/scollTxtView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFC320"
+                        android:layout_marginLeft="5sp"
+                        />
                 </LinearLayout>
             </RelativeLayout>
         </android.support.design.widget.CoordinatorLayout>

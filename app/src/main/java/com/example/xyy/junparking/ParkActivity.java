@@ -1,8 +1,11 @@
 package com.example.xyy.junparking;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Message;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,7 +18,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -24,6 +26,7 @@ import com.bumptech.glide.Glide;
 import com.example.xyy.adapter.MyPagerAdapter;
 import com.example.xyy.bean.News;
 import com.example.xyy.publicclass.HttpUtil;
+import com.example.xyy.publicclass.VerticalTextview;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,19 +35,22 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 
 public class ParkActivity extends AppCompatActivity {
 
+    private static final int NEXT_PAGE = 20;
     ArrayList<News> newsList = new ArrayList<News>();
+    ArrayList<String> titleList;
     private DrawerLayout mDrawerLayout;
     private ImageView bingPicImg;
     private ViewPager viewPager;
     private LinearLayout ll_dots;
     private static final int FIRST_PAGE = 1;
     private int currentPosition;
+    private boolean isLooper = false;
+    private VerticalTextview mTextView;
+    private Handler mHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,8 +106,32 @@ public class ParkActivity extends AppCompatActivity {
             }
         });
 
+        init();
         //初始化ViewPager数据
         initData();
+
+        //开启一个线程，用于线程
+/*        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                isLooper = true;
+                while (isLooper){
+                    try {
+                        Thread.sleep(2000);
+                    }catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            //这里是设置当前的下一页
+                            viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+                        }
+                    });
+                }
+            }
+        }).run();*/
+
         //初始化小点
         initDots();
 
@@ -113,6 +143,8 @@ public class ParkActivity extends AppCompatActivity {
         //设置当前展示的位置为1
   //      viewPager.setCurrentItem(FIRST_PAGE);
 
+        //mHandler = new Handler();
+        //mHandler.postDelayed(new TimerRunnable(), 5000);
         //设置viewPager的监听事件
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             //滑动过程中的方法 position 索引值
@@ -158,6 +190,8 @@ public class ParkActivity extends AppCompatActivity {
 //                }
             }
         });
+
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
@@ -228,5 +262,67 @@ public class ParkActivity extends AppCompatActivity {
         newsList.add(new News("邀好友，得大奖", R.mipmap.ad3));    //3
 
         //newsList.add(new News("战略合作伙伴", R.mipmap.ad1));      //4
+    }
+
+//    @SuppressLint("HandlerLeak")
+//    Handler mHandler = new Handler(){
+//        @Override
+//        public void handleMessage(Message msg) {
+//            super.handleMessage(msg);
+//            if (msg.what == NEXT_PAGE){
+//                currentPosition = viewPager.getCurrentItem();
+//                currentPosition = (currentPosition + 1) % newsList.size();
+//                viewPager.setCurrentItem(currentPosition);
+//                mHandler.sendEmptyMessageDelayed(NEXT_PAGE, 2000);
+//            }
+//        }
+//    };
+
+    class TimerRunnable implements Runnable{
+        @Override
+        public void run() {
+            currentPosition = viewPager.getCurrentItem();
+            currentPosition = (currentPosition + 1) % newsList.size();
+            viewPager.setCurrentItem(currentPosition);
+            if (mHandler != null){
+                mHandler.postDelayed(this, 5000);
+            }
+        }
+    }
+
+    private void init(){
+        mTextView = (VerticalTextview) findViewById(R.id.scollTxtView);
+        titleList = new ArrayList<String>();
+        titleList.add("欢迎使用机场停车APP，车位预定指南！");
+        titleList.add("特大优惠：新用户停车送代金券！");
+        titleList.add("全国各省市机场停车位等你来预定！");
+        mTextView.setTextList(titleList);
+        mTextView.setText(18, 5, 0xfffdb700);
+        mTextView.setTextStillTime(3000);
+        mTextView.setAnimTime(300);
+        mTextView.setOnItemClickListener(new VerticalTextview.OnItemClickListener(){
+            @Override
+            public void onItemClick(int position) {
+                Toast.makeText(ParkActivity.this, "点击了："+titleList.get(position), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mTextView.startAutoScroll();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mTextView.stopAutoScroll();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mHandler = null;
     }
 }
