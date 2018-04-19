@@ -28,27 +28,31 @@
                     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                     />
-
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/viewPager"
-                    android:layout_width="match_parent"
-                    android:layout_height="341px"
-                    android:layout_below="@id/toolbar"
-                    />
-                <LinearLayout
-                    android:id="@+id/ll_dots"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="150sp"
-                    android:layout_alignRight="@id/viewPager">
-
-                </LinearLayout>
-                <LinearLayout
+                <RelativeLayout
+                    android:id="@+id/rlviewpager"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="170sp"
+                    android:layout_below="@id/toolbar">
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="341px"
+                        />
+                    <LinearLayout
+                        android:id="@+id/ll_dots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:layout_alignBottom="@+id/viewPager"
+                        android:layout_alignRight="@id/viewPager">
+                    </LinearLayout>
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/ll_gonggao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlviewpager"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
                     android:background="#FFF3D3">
@@ -68,9 +72,10 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/ll_doublechoice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="200sp"
+                    android:layout_below="@+id/ll_gonggao"
                     android:orientation="horizontal"
                     android:background="#FFF">
                     <LinearLayout
@@ -124,8 +129,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:background="#FFF"
-                    android:layout_marginTop="360sp">
+                    android:layout_below="@+id/ll_doublechoice"
+                    android:layout_marginTop="30sp"
+                    android:background="#FFF">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
