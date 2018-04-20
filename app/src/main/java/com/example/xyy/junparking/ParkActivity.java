@@ -1,6 +1,7 @@
 package com.example.xyy.junparking;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -51,6 +52,10 @@ public class ParkActivity extends AppCompatActivity {
     private boolean isLooper = false;
     private VerticalTextview mTextView;
     private Handler mHandler;
+    private ImageView imgtabhome1;
+    private ImageView imgtabcheck1;
+    private ImageView imgtabmsg1;
+    private ImageView imgtabme1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +70,11 @@ public class ParkActivity extends AppCompatActivity {
 
         setContentView(R.layout.jun_park_layout);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        imgtabhome1 = (ImageView) findViewById(R.id.imgtabhome1);
+        imgtabcheck1 = (ImageView) findViewById(R.id.imgtabcheck1);
+        imgtabmsg1 = (ImageView) findViewById(R.id.imgtabmsg1);
+        imgtabme1 = (ImageView) findViewById(R.id.imgtabme1);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -191,7 +201,32 @@ public class ParkActivity extends AppCompatActivity {
             }
         });
 
+        imgtabcheck1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ParkActivity.this, CheckActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
 
+        imgtabmsg1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ParkActivity.this, MsgActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        imgtabme1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ParkActivity.this, MeActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
     }
 
     public boolean onCreateOptionsMenu(Menu menu){

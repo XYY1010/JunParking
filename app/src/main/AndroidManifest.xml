@@ -10,8 +10,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ParkActivity"
-                  android:label="机场停车"
+        <activity
+            android:name=".ParkActivity"
+            android:label="机场停车"
             android:theme="@style/ParkActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +20,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CheckActivity"
+            android:label="我的订单"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MsgActivity"
+            android:label="我的消息"
+            android:theme="@style/ParkActivityTheme"></activity>
+        <activity android:name=".MeActivity"
+            android:label="我"
+            android:theme="@style/ParkActivityTheme"></activity>
     </application>
 
 </manifest>

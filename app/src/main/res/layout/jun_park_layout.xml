@@ -299,16 +299,35 @@
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:layout_alignParentBottom="true"
                     >
                     <ImageView
+                        android:id="@+id/imgtabhome1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/totaltab"
-                        android:scaleType="fitXY"/>
+                        android:src="@mipmap/tabhome"
+                        android:layout_weight="1"/>
+                    <ImageView
+                        android:id="@+id/imgtabcheck1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/tabcheck"
+                        android:layout_weight="1"/>
+                    <ImageView
+                        android:id="@+id/imgtabmsg1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/tabmsg"
+                        android:layout_weight="1"/>
+                    <ImageView
+                        android:id="@+id/imgtabme1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/tabme"
+                        android:layout_weight="1"/>
                 </LinearLayout>
             </RelativeLayout>
         </android.support.design.widget.CoordinatorLayout>
