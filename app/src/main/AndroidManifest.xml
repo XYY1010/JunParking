@@ -33,10 +33,33 @@
         <activity
             android:name=".MsgActivity"
             android:label="我的消息"
-            android:theme="@style/ParkActivityTheme"></activity>
-        <activity android:name=".MeActivity"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MeActivity"
             android:label="我"
-            android:theme="@style/ParkActivityTheme"></activity>
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MeInfoActivity"
+            android:label="信息修改"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
