@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class MeActivity extends AppCompatActivity {
@@ -20,6 +21,8 @@ public class MeActivity extends AppCompatActivity {
     private ImageView imgtabmsg;
     private ImageView imgtabme;
     private ImageView imgIcon;
+    private LinearLayout llcode;
+    private LinearLayout llshare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,8 @@ public class MeActivity extends AppCompatActivity {
         imgtabmsg = (ImageView) findViewById(R.id.imgtabmsg4);
         imgtabme = (ImageView) findViewById(R.id.imgtabme4);
         imgIcon = (ImageView) findViewById(R.id.icon_image);
+        llcode = (LinearLayout) findViewById(R.id.ll_code);
+        llshare = (LinearLayout) findViewById(R.id.ll_share);
 
 
         if (Build.VERSION.SDK_INT >= 21){
@@ -75,6 +80,22 @@ public class MeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MeActivity.this, MeInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        llcode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MeActivity.this, CouponCodeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        llshare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MeActivity.this, ShareActivity.class);
                 startActivity(intent);
             }
         });

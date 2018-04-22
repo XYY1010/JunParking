@@ -60,6 +60,25 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-    </application>
+        <activity
+            android:name=".CouponCodeActivity"
+            android:label="优惠码"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ShareActivity"
+            android:label="邀请分享"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
 </manifest>
