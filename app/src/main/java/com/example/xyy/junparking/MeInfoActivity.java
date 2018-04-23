@@ -10,8 +10,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.xyy.publicclass.FastBlur;
 
@@ -25,6 +29,13 @@ public class MeInfoActivity extends AppCompatActivity {
     private Bitmap mBitmap, overlay;
    private Toolbar toolbar;
     private CollapsingToolbarLayout collapsingToolbarLayout;
+    private Button btn_save;
+    private LinearLayout ll_head;
+    private LinearLayout ll_nickname;
+    private LinearLayout ll_gender;
+    private LinearLayout ll_birth;
+    private LinearLayout ll_Email;
+    private LinearLayout ll_platenum;
 
     public static final String USER_NAME = "YuJu";
 
@@ -38,6 +49,13 @@ public class MeInfoActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        btn_save = (Button) findViewById(R.id.btn_save);
+        ll_head = (LinearLayout) findViewById(R.id.ll_head);
+        ll_nickname = (LinearLayout) findViewById(R.id.ll_nickname);
+        ll_gender = (LinearLayout) findViewById(R.id.ll_gender);
+        ll_birth = (LinearLayout) findViewById(R.id.ll_birth);
+        ll_Email = (LinearLayout) findViewById(R.id.ll_Email);
+        ll_platenum = (LinearLayout) findViewById(R.id.ll_platenum);
 
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -45,6 +63,48 @@ public class MeInfoActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
         collapsingToolbarLayout.setTitle(USER_NAME);
+
+        btn_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MeInfoActivity.this, "您点击了立即保存", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ll_head.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MeInfoActivity.this, "您点击了头像修改", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ll_nickname.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MeInfoActivity.this, "您点击了昵称修改", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ll_birth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MeInfoActivity.this, "您点击了生日修改", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ll_Email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MeInfoActivity.this, "您点击了邮箱修改", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ll_platenum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MeInfoActivity.this, "您点击了车牌号修改", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
