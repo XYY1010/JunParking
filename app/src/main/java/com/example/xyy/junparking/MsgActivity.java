@@ -6,8 +6,11 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MsgActivity extends AppCompatActivity {
 
@@ -65,5 +68,20 @@ public class MsgActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.toolbar, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.phone:
+                Toast.makeText(this, "You made a call", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+        }
+        return true;
     }
 }
