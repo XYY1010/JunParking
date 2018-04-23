@@ -31,6 +31,7 @@ public class CheckActivity extends Activity {
                 Intent intent = new Intent(CheckActivity.this, ParkActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -40,6 +41,7 @@ public class CheckActivity extends Activity {
                 Intent intent = new Intent(CheckActivity.this, MsgActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -49,6 +51,7 @@ public class CheckActivity extends Activity {
                 Intent intent = new Intent(CheckActivity.this, MeActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
     }

@@ -80,5 +80,85 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".RuleActivity"
+            android:label="活动规则"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HelpCenterActivity"
+            android:label="帮助中心"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BookNotes"
+            android:label="预定须知"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ReformPolicy"
+            android:label="退改政策"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CostStatement"
+            android:label="费用说明"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CommonProblem"
+            android:label="常见问题"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ParkingGuideActivity"
+            android:label="停车指南"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FeedBackActivity"
+            android:label="意见反馈"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

@@ -207,6 +207,7 @@ public class ParkActivity extends AppCompatActivity {
                 Intent intent = new Intent(ParkActivity.this, CheckActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -216,6 +217,7 @@ public class ParkActivity extends AppCompatActivity {
                 Intent intent = new Intent(ParkActivity.this, MsgActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -225,6 +227,7 @@ public class ParkActivity extends AppCompatActivity {
                 Intent intent = new Intent(ParkActivity.this, MeActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
     }

@@ -42,6 +42,7 @@ public class MsgActivity extends AppCompatActivity {
                 Intent intent = new Intent(MsgActivity.this, ParkActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -51,6 +52,7 @@ public class MsgActivity extends AppCompatActivity {
                 Intent intent = new Intent(MsgActivity.this, CheckActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -60,6 +62,7 @@ public class MsgActivity extends AppCompatActivity {
                 Intent intent = new Intent(MsgActivity.this, MeActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
     }

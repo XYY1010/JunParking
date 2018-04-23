@@ -23,6 +23,8 @@ public class MeActivity extends AppCompatActivity {
     private ImageView imgIcon;
     private LinearLayout llcode;
     private LinearLayout llshare;
+    private LinearLayout llhelp;
+    private LinearLayout llfeedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,8 @@ public class MeActivity extends AppCompatActivity {
         imgIcon = (ImageView) findViewById(R.id.icon_image);
         llcode = (LinearLayout) findViewById(R.id.ll_code);
         llshare = (LinearLayout) findViewById(R.id.ll_share);
-
+        llhelp = (LinearLayout) findViewById(R.id.ll_help);
+        llfeedback = (LinearLayout) findViewById(R.id.ll_feedback);
 
         if (Build.VERSION.SDK_INT >= 21){
             View decorView = getWindow().getDecorView();
@@ -55,6 +58,7 @@ public class MeActivity extends AppCompatActivity {
                 Intent intent = new Intent(MeActivity.this, ParkActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -64,6 +68,7 @@ public class MeActivity extends AppCompatActivity {
                 Intent intent = new Intent(MeActivity.this, CheckActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -73,6 +78,7 @@ public class MeActivity extends AppCompatActivity {
                 Intent intent = new Intent(MeActivity.this, MsgActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -96,6 +102,22 @@ public class MeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MeActivity.this, ShareActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        llhelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MeActivity.this, HelpCenterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        llfeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MeActivity.this, FeedBackActivity.class);
                 startActivity(intent);
             }
         });
