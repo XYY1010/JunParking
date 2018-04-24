@@ -335,24 +335,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/tabhome1"
+            android:scaleType="fitXY"
             android:layout_weight="1"/>
         <ImageView
             android:id="@+id/imgtabcheck4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/tabcheck"
+            android:scaleType="fitXY"
             android:layout_weight="1"/>
         <ImageView
             android:id="@+id/imgtabmsg4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/tabmsg"
+            android:scaleType="fitXY"
             android:layout_weight="1"/>
         <ImageView
             android:id="@+id/imgtabme4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/tabme1"
+            android:scaleType="fitXY"
             android:layout_weight="1"/>
     </LinearLayout>
 </RelativeLayout>

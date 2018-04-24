@@ -40,24 +40,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/tabhome1"
+            android:scaleType="fitXY"
             android:layout_weight="1"/>
         <ImageView
             android:id="@+id/imgtabcheck3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/tabcheck"
+            android:scaleType="fitXY"
             android:layout_weight="1"/>
         <ImageView
             android:id="@+id/imgtabmsg3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/tabmsg1"
+            android:scaleType="fitXY"
             android:layout_weight="1"/>
         <ImageView
             android:id="@+id/imgtabme3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/tabme"
+            android:scaleType="fitXY"
             android:layout_weight="1"/>
     </LinearLayout>
 </RelativeLayout>
