@@ -56,6 +56,9 @@ public class ParkActivity extends AppCompatActivity {
     private ImageView imgtabcheck1;
     private ImageView imgtabmsg1;
     private ImageView imgtabme1;
+    private LinearLayout ll_airport;
+    private LinearLayout ll_highrail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +78,8 @@ public class ParkActivity extends AppCompatActivity {
         imgtabcheck1 = (ImageView) findViewById(R.id.imgtabcheck1);
         imgtabmsg1 = (ImageView) findViewById(R.id.imgtabmsg1);
         imgtabme1 = (ImageView) findViewById(R.id.imgtabme1);
+        ll_airport = (LinearLayout) findViewById(R.id.ll_airport);
+        ll_highrail = (LinearLayout) findViewById(R.id.ll_highrail);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -228,6 +233,14 @@ public class ParkActivity extends AppCompatActivity {
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
+            }
+        });
+
+        ll_airport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ParkActivity.this, NationalAirportActivity.class);
+                startActivity(intent);
             }
         });
     }
