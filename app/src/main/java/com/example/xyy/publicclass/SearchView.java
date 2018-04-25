@@ -53,6 +53,8 @@ public class SearchView extends LinearLayout implements View.OnClickListener {
         imgCancel = (ImageView) findViewById(R.id.airport_cancel);
         lvTips = (ListView) findViewById(R.id.airport_lv_tips);
 
+        etInput.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
+
         lvTips.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

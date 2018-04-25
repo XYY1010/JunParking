@@ -193,20 +193,20 @@ public class NationalAirportActivity extends AppCompatActivity implements Search
      * @param text
      */
     public void getResultData(String text) {
-        if (resultData == null){
-            //初始化
+        if (resultData == null) {
+            // 初始化
             resultData = new ArrayList<>();
-        }else {
+        } else {
             resultData.clear();
-            for (int i=0; i<dbData.size(); i++){
-                if (dbData.get(i).getTitle().contains(text.trim())){
+            for (int i = 0; i < dbData.size(); i++) {
+                if (dbData.get(i).getTitle().contains(text.trim())) {
                     resultData.add(dbData.get(i));
                 }
             }
         }
-        if (resultAdapter == null){
+        if (resultAdapter == null) {
             resultAdapter = new SearchAdapter(this, resultData, R.layout.airport_item_list);
-        }else {
+        } else {
             resultAdapter.notifyDataSetChanged();
         }
     }

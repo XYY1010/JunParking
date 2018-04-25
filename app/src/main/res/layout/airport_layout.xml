@@ -18,9 +18,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="#FFF"
-        android:orientation="horizontal">
+        android:orientation="vertical">
         <com.example.xyy.publicclass.SearchView
             android:id="@+id/airport_search_view"
             android:layout_width="match_parent"
@@ -31,7 +31,8 @@
         <ListView
             android:id="@+id/airport_lv_search_result"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
         </ListView>
     </LinearLayout>
