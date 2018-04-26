@@ -23,27 +23,24 @@ import static android.R.attr.width;
 public class LetterListView extends View {
 
     OnTouchingLetterChangedListener onTouchingLetterChangedListener;
-
-    public static  String[] b = {"定位", "热门", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
+    public static String[] b = {"定位", "热门", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
             "L", "M", "N", "P", "Q", "R", "S", "T", "W", "X", "Y", "Z"};
-
     int choose = -1;
-
     Paint paint = new Paint();
     boolean showBkg = false;
     private Context mContext;
 
-    public LetterListView(Context context, AttributeSet attrs, int defStyle){
+    public LetterListView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         this.mContext = context;
     }
 
-    public LetterListView(Context context, AttributeSet attrs){
+    public LetterListView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.mContext = context;
     }
 
-    public LetterListView(Context context){
+    public LetterListView(Context context) {
         super(context);
         this.mContext = context;
     }
@@ -51,15 +48,15 @@ public class LetterListView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (showBkg){
+        if (showBkg) {
             canvas.drawColor(Color.parseColor("#40000000"));
         }
         int height = getHeight();
         int width = getWidth();
         int singleHeight = height / b.length;
-        for (int i=0; i<b.length; i++){
-            paint.setColor(Color.parseColor("#50B3DA"));
-            paint.setTextSize(DisplayUtil.sp2px(mContext, 12));
+        for (int i = 0; i < b.length; i++) {
+            paint.setColor(Color.parseColor("#FF50B3DA"));
+            paint.setTextSize(DisplayUtil.sp2px(mContext, 13));
             paint.setAntiAlias(true);
             float xPos = width / 2 - paint.measureText(b[i]) / 2;
             float yPos = singleHeight * i + singleHeight;
@@ -75,11 +72,11 @@ public class LetterListView extends View {
         final int oldChoose = choose;
         final OnTouchingLetterChangedListener listener = onTouchingLetterChangedListener;
         final int c = (int) (y / getHeight() * b.length);
-        switch (action){
+        switch (action) {
             case MotionEvent.ACTION_DOWN:
                 showBkg = true;
-                if (oldChoose != c && listener != null){
-                    if (c >= 0 && c < b.length){
+                if (oldChoose != c && listener != null) {
+                    if (c >= 0 && c < b.length) {
                         listener.onTouchingLetterChanged(b[c]);
                         choose = c;
                         invalidate();
@@ -87,10 +84,12 @@ public class LetterListView extends View {
                 }
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (oldChoose != c && listener != null){
-                    listener.onTouchingLetterChanged(b[c]);
-                    choose = c;
-                    invalidate();
+                if (oldChoose != c && listener != null) {
+                    if (c >= 0 && c < b.length) {
+                        listener.onTouchingLetterChanged(b[c]);
+                        choose = c;
+                        invalidate();
+                    }
                 }
                 break;
             case MotionEvent.ACTION_UP:
@@ -107,11 +106,12 @@ public class LetterListView extends View {
         return super.onTouchEvent(event);
     }
 
-    public void setOnTouchingLetterChangedListener(OnTouchingLetterChangedListener onTouchingLetterChangedListener){
+    public void setOnTouchingLetterChangedListener(
+            OnTouchingLetterChangedListener onTouchingLetterChangedListener) {
         this.onTouchingLetterChangedListener = onTouchingLetterChangedListener;
     }
 
-    public interface OnTouchingLetterChangedListener{
+    public interface OnTouchingLetterChangedListener {
         void onTouchingLetterChanged(String s);
     }
 }

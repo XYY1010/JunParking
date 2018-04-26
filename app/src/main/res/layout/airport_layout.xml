@@ -16,41 +16,72 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFF"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/search_locate_content_et"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_edittext"
+                android:drawableLeft="@mipmap/search"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:hint="请输入目的地或停车场名称"
+                android:imeOptions="actionSearch"
+                android:maxLength="16"
+                android:singleLine="true"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#FFF">
 
+
+        <ListView
+            android:id="@+id/total_city_lv"
+            android:divider="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
         <com.example.xyy.publicclass.LetterListView
+            android:id="@+id/total_city_letters_lv"
             android:layout_width="25dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_marginRight="2dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
             />
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/search_city_lv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FFF"
-            android:orientation="vertical">
-            <com.example.xyy.publicclass.SearchView
-                android:id="@+id/airport_search_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            android:divider="@null"
+            android:listSelector="@android:color/transparent"
+            android:visibility="gone" />
 
-            </com.example.xyy.publicclass.SearchView>
-
-            <ListView
-                android:id="@+id/airport_lv_search_result"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone">
-
-            </ListView>
-        </LinearLayout>
-
+        <TextView
+            android:id="@+id/no_search_result_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="抱歉,暂时没有找到相关城市"
+            android:textColor="#ff0000"
+            android:textSize="16sp"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </LinearLayout>

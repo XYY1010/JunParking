@@ -1,0 +1,396 @@
+{
+  "City": [
+    {
+      "name": "定位",
+      "key": "0",
+      "first": "",
+      "full": "",
+      "code": ""
+    },
+    {
+      "name": "热门",
+      "key": "1",
+      "first": "",
+      "full": "",
+      "code": ""
+    },
+	{
+      "name": "北京首都",
+      "key": "热门",
+      "first": "bjsd",
+      "full": "beijingshoudu",
+      "code": "1003"
+    },
+	{
+      "name": "广州白云",
+      "key": "热门",
+      "first": "gzby",
+      "full": "guangzhoubaiyun",
+      "code": "1046"
+    },
+	{
+      "name": "海口美兰",
+      "key": "热门",
+      "first": "hkml",
+      "full": "haikoumeilan",
+      "code": "1055"
+    },
+	{
+      "name": "合肥新桥",
+      "key": "热门",
+      "first": "hfxq",
+      "full": "hefeixinqiao",
+      "code": "1056"
+    },
+	{
+      "name": "哈尔滨太平",
+      "key": "热门",
+      "first": "hebtp",
+      "full": "haerbintaiping",
+      "code": "1057"
+    },
+	{
+      "name": "杭州萧山",
+      "key": "热门",
+      "first": "hzxs",
+      "full": "hangzhouxiaoshan",
+      "code": "1058"
+    },
+	{
+      "name": "上海迪士尼",
+      "key": "热门",
+      "first": "shdsn",
+      "full": "shanghaidishini",
+      "code": "2012"
+    },
+	{
+      "name": "沈阳仙桃",
+      "key": "热门",
+      "first": "syxt",
+      "full": "shenyangxiantao",
+      "code": "2013"
+    },
+	{
+      "name": "深圳宝安",
+      "key": "热门",
+      "first": "szba",
+      "full": "shenzhenbaoan",
+      "code": "2014"
+    },
+	{
+      "name": "上海虹桥",
+      "key": "热门",
+      "first": "shhq",
+      "full": "shanghaihongqiao",
+      "code": "2015"
+    },
+	{
+      "name": "上海浦东",
+      "key": "热门",
+      "first": "shpd",
+      "full": "shanghaipudong",
+      "code": "2016"
+    },
+	{
+      "name": "包头二里半",
+      "key": "B",
+      "first": "btelb",
+      "full": "baotouerlban",
+      "code": "1001"
+    },
+	{
+      "name": "北京南苑",
+      "key": "B",
+      "first": "bjny",
+      "full": "beijingnanyuan",
+      "code": "1002"
+    },
+	{
+      "name": "北京首都",
+      "key": "B",
+      "first": "bjsd",
+      "full": "beijingshoudu",
+      "code": "1003"
+    },
+	{
+      "name": "常州奔牛",
+      "key": "C",
+      "first": "czbn",
+      "full": "changzhoubenniu",
+      "code": "1014"
+    },
+	{
+      "name": "长春龙嘉",
+      "key": "C",
+      "first": "cclj",
+      "full": "changchunlongjia",
+      "code": "1015"
+    },
+	{
+      "name": "重庆江北",
+      "key": "C",
+      "first": "cqjb",
+      "full": "chongqingjiangbei",
+      "code": "1017"
+    },
+	{
+      "name": "长沙黄花",
+      "key": "C",
+      "first": "cshh",
+      "full": "changshahuanghua",
+      "code": "1016"
+    },
+	{
+      "name": "成都双流",
+      "key": "C",
+      "first": "cdsl",
+      "full": "chengdushuangliu",
+      "code": "1017"
+    },
+	{
+      "name": "大连周水子",
+      "key": "D",
+      "first": "dlzsz",
+      "full": "dalianzhoushuizi",
+      "code": "1025"
+    },
+	{
+      "name": "福州长乐",
+      "key": "F",
+      "first": "fzcl",
+      "full": "fuzhouchangle",
+      "code": "1035"
+    },
+	{
+      "name": "桂林两江",
+      "key": "G",
+      "first": "gllj",
+      "full": "guilinliangjiang",
+      "code": "1044"
+    },
+	{
+      "name": "贵阳龙洞堡",
+      "key": "G",
+      "first": "gyldb",
+      "full": "guiyanglongdongbao",
+      "code": "1045"
+    },
+	{
+      "name": "广州白云",
+      "key": "G",
+      "first": "gzby",
+      "full": "guangzhoubaiyun",
+      "code": "1046"
+    },
+	{
+      "name": "呼和浩特白塔",
+      "key": "H",
+      "first": "hhhtbt",
+      "full": "呼和浩特白塔",
+      "code": "1054"
+    },
+	{
+      "name": "海口美兰",
+      "key": "H",
+      "first": "hkml",
+      "full": "haikoumeilan",
+      "code": "1055"
+    },
+	{
+      "name": "合肥新桥",
+      "key": "H",
+      "first": "hfxq",
+      "full": "hefeixinqiao",
+      "code": "1056"
+    },
+	{
+      "name": "哈尔滨太平",
+      "key": "H",
+      "first": "hebtp",
+      "full": "haerbintaiping",
+      "code": "1057"
+    },
+	{
+      "name": "杭州萧山",
+      "key": "H",
+      "first": "hzxs",
+      "full": "hangzhouxiaoshan",
+      "code": "1058"
+    },
+	{
+      "name": "揭阳潮汕",
+      "key": "J",
+      "first": "jycs",
+      "full": "jieyangchaoshan",
+      "code": "1065"
+    },
+	{
+      "name": "济南遥墙",
+      "key": "J",
+      "first": "jnyq",
+      "full": "jinanyaoqiang",
+      "code": "1066"
+    },
+	{
+      "name": "昆明长水",
+      "key": "K",
+      "first": "kmcs",
+      "full": "kunmingchangshui",
+      "code": "1077"
+    },
+	{
+      "name": "兰州中川",
+      "key": "L",
+      "first": "lzzc",
+      "full": "lanzhouzhongchuan",
+      "code": "1084"
+    },
+	{
+      "name": "拉萨贡嘎",
+      "key": "L",
+      "first": "lsgg",
+      "full": "lasagongga",
+      "code": "1085"
+    },
+	{
+      "name": "丽江三义",
+      "key": "L",
+      "first": "ljsy",
+      "full": "lijiangsanyi",
+      "code": "1086"
+    },
+	{
+      "name": "临沂沭埠岭",
+      "key": "L",
+      "first": "lysbl",
+      "full": "linyishubulin",
+      "code": "1087"
+    },
+	{
+      "name": "宁波栎社",
+      "key": "N",
+      "first": "nbls",
+      "full": "ningbolishe",
+      "code": "1094"
+    },
+	{
+      "name": "南宁吴圩",
+      "key": "N",
+      "first": "nnwx",
+      "full": "nanningwuxu",
+      "code": "1095"
+    },
+	{
+      "name": "南昌昌北",
+      "key": "N",
+      "first": "nccb",
+      "full": "nanchangchangbei",
+      "code": "1096"
+    },
+	{
+      "name": "南京禄口",
+      "key": "N",
+      "first": "njlk",
+      "full": "nanjinglukou",
+      "code": "1097"
+    },
+	{
+      "name": "青岛流亭",
+      "key": "Q",
+      "first": "qdlt",
+      "full": "qingdaoliuting",
+      "code": "2001"
+    },
+	{
+      "name": "石家庄正定",
+      "key": "S",
+      "first": "sjzzd",
+      "full": "shijiazhuangzhengding",
+      "code": "2011"
+    },
+	{
+      "name": "上海迪士尼",
+      "key": "S",
+      "first": "shdsn",
+      "full": "shanghaidishini",
+      "code": "2012"
+    },
+	{
+      "name": "沈阳仙桃",
+      "key": "S",
+      "first": "syxt",
+      "full": "shenyangxiantao",
+      "code": "2013"
+    },
+	{
+      "name": "深圳宝安",
+      "key": "S",
+      "first": "szba",
+      "full": "shenzhenbaoan",
+      "code": "2014"
+    },
+	{
+      "name": "上海虹桥",
+      "key": "S",
+      "first": "shhq",
+      "full": "shanghaihongqiao",
+      "code": "2015"
+    },
+	{
+      "name": "上海浦东",
+      "key": "S",
+      "first": "shpd",
+      "full": "shanghaipudong",
+      "code": "2016"
+    },
+	{
+      "name": "台州路桥",
+      "key": "T",
+      "first": "tzlq",
+      "full": "taizhouluqiao",
+      "code": "2021"
+    },
+	{
+      "name": "天津滨海",
+      "key": "T",
+      "first": "tjbh",
+      "full": "tianjinbinhai",
+      "code": "2022"
+    },
+	{
+      "name": "太原武宿",
+      "key": "T",
+      "first": "tyws",
+      "full": "taiyuanwusu",
+      "code": "2023"
+    },
+	{
+      "name": "温州龙湾",
+      "key": "W",
+      "first": "wzlw",
+      "full": "wenzhoulongwan",
+      "code": "2033"
+    },
+	{
+      "name": "乌鲁木齐地窝堡",
+      "key": "W",
+      "first": "wlmqdwb",
+      "full": "wulumuqidiwobao",
+      "code": "2034"
+    },
+	{
+      "name": "无锡硕放",
+      "key": "W",
+      "first": "wxsf",
+      "full": "wuxishuofang",
+      "code": "2035"
+    },
+	{
+      "name": "武汉天河",
+      "key": "W",
+      "first": "whth",
+      "full": "wuhantianhe",
+      "code": "2036"
+    }
+  ]
+}
