@@ -36,13 +36,6 @@
       "code": "1055"
     },
 	{
-      "name": "合肥新桥",
-      "key": "热门",
-      "first": "hfxq",
-      "full": "hefeixinqiao",
-      "code": "1056"
-    },
-	{
       "name": "哈尔滨太平",
       "key": "热门",
       "first": "hebtp",
@@ -90,6 +83,13 @@
       "first": "shpd",
       "full": "shanghaipudong",
       "code": "2016"
+    },
+	{
+      "name": "珠海金湾",
+      "key": "热门",
+      "first": "zhjw",
+      "full": "zhuhaijinwan",
+      "code": "2061"
     },
 	{
       "name": "包头二里半",
@@ -391,6 +391,97 @@
       "first": "whth",
       "full": "wuhantianhe",
       "code": "2036"
+    },
+	{
+      "name": "西宁曹家堡",
+      "key": "X",
+      "first": "xncjb",
+      "full": "xiningcaojiabao",
+      "code": "2041"
+    },
+	{
+      "name": "厦门高崎",
+      "key": "X",
+      "first": "xmgq",
+      "full": "xiamengaoqi",
+      "code": "2042"
+    },
+	{
+      "name": "西安咸阳",
+      "key": "X",
+      "first": "xaxy",
+      "full": "xianxianyang",
+      "code": "2043"
+    },
+	{
+      "name": "银川河东",
+      "key": "Y",
+      "first": "ychd",
+      "full": "yinchuanhedong",
+      "code": "2051"
+    },
+	{
+      "name": "义乌机场",
+      "key": "Y",
+      "first": "ywjc",
+      "full": "yiwujichang",
+      "code": "2052"
+    },
+	{
+      "name": "烟台蓬莱",
+      "key": "Y",
+      "first": "ytpl",
+      "full": "yantaipenglai",
+      "code": "2053"
+    },
+	{
+      "name": "宜昌三峡",
+      "key": "Y",
+      "first": "ycsx",
+      "full": "yichangsanxia",
+      "code": "2054"
+    },
+	{
+      "name": "延吉机场",
+      "key": "Y",
+      "first": "yjjc",
+      "full": "yanjijichang",
+      "code": "2055"
+    },
+	{
+      "name": "扬州泰州机场",
+      "key": "Y",
+      "first": "yztzjc",
+      "full": "yangzhoutaizhoujichang",
+      "code": "2056"
+    },
+	{
+      "name": "珠海金湾",
+      "key": "Z",
+      "first": "zhjw",
+      "full": "zhuhaijinwan",
+      "code": "2061"
+    },
+	{
+      "name": "遵义新舟",
+      "key": "Z",
+      "first": "zyxz",
+      "full": "zunyixinzhou",
+      "code": "2062"
+    },
+	{
+      "name": "张家界荷花",
+      "key": "Z",
+      "first": "zjjhh",
+      "full": "zhangjiajiehehua",
+      "code": "2063"
+    },
+	{
+      "name": "郑州新郑",
+      "key": "Z",
+      "first": "zzxz",
+      "full": "zhengzhouxinzheng",
+      "code": "2064"
     }
   ]
 }
