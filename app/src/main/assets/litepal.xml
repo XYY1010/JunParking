@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+	<dbname value="AirportParking"></dbname>
+	<version value="3"></version>
+	
+	<list>
+	<mapping class="com.example.xyy.dbhelper.Airport">
+
+	</mapping>
+	<mapping class="com.example.xyy.dbhelper.HighSpeedRialStation">
+
+	</mapping>
+	<mapping class="com.example.xyy.dbhelper.ParkingLot">
+
+	</mapping>
+	</list>
+</litepal>

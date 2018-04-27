@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:id="@+id/img_parking_lot"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/park1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_parkinglot_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="南苑机场宝加苑停车场"
+                android:textColor="#000"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_rating_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.7分"
+                    android:textColor="@color/light_blue"/>
+                <TextView
+                    android:id="@+id/tv_sales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="月销269单"
+                    android:textSize="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_isinroom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="室内"
+                    android:textSize="10dp"
+                    android:textColor="#000"/>
+                <TextView
+                    android:id="@+id/tv_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="10dp"
+                    android:text="距机场直线1.8公里"
+                    android:textColor="#000"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_remarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="停车场备注信息"
+                android:background="#eee"
+                android:textSize="10dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_service1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tv_service_style"
+                    android:text="免费接送"
+                    android:textSize="9dp"
+                    android:visibility="gone"
+                    android:textColor="@color/light_blue"/>
+
+                <TextView
+                    android:id="@+id/tv_service2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_service1"
+                    android:background="@drawable/tv_service_style"
+                    android:layout_marginLeft="5dp"
+                    android:text="24小时监控"
+                    android:textSize="9dp"
+                    android:visibility="gone"
+                    android:textColor="@color/light_blue"/>
+
+                <TextView
+                    android:id="@+id/tv_service3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_service2"
+                    android:background="@drawable/tv_service_style"
+                    android:layout_marginLeft="5dp"
+                    android:text="专人值守"
+                    android:textSize="9dp"
+                    android:visibility="gone"
+                    android:textColor="@color/light_blue"/>
+
+                <TextView
+                    android:id="@+id/tv_service4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_service3"
+                    android:background="@drawable/tv_service_style"
+                    android:layout_marginLeft="5dp"
+                    android:text="支持在线支付"
+                    android:textSize="9dp"
+                    android:visibility="gone"
+                    android:textColor="@color/light_blue"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tv_discount_style"
+                android:layout_marginTop="3dp"
+                android:text="预付20元抵30元"
+                android:visibility="gone"
+                android:textColor="@color/orange_color"
+                android:textSize="9dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_jun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingTop="5dp"
+            android:gravity="center_vertical"
+            android:text="均"
+            android:textColor="#000"/>
+        <TextView
+            android:id="@+id/tv_avg_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/tv_jun"
+            android:paddingRight="5dp"
+            android:gravity="center_vertical"
+            android:text="27.5"
+            android:textSize="20dp"
+            android:textColor="@color/orange_color"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/tv_avg_cost"
+            android:paddingTop="5dp"
+            android:gravity="center_vertical"
+            android:text="￥"
+            android:textSize="15dp"
+            android:textColor="@color/orange_color"/>
+    </RelativeLayout>
+</LinearLayout>
