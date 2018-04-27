@@ -6,6 +6,7 @@
     android:background="#FFF">
 
     <TextView
+        android:id="@+id/recent_city_tag"
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:background="#F2F6F7"
@@ -14,7 +15,6 @@
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:text="热门城市机场"
         />
 
     <com.example.xyy.publicclass.ScrollWithGridView

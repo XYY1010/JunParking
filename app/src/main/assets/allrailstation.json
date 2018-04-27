@@ -1,0 +1,320 @@
+{
+  "City": [
+    {
+      "name": "定位",
+      "key": "0",
+      "first": "",
+      "full": "",
+      "code": ""
+    },
+    {
+      "name": "热门",
+      "key": "1",
+      "first": "",
+      "full": "",
+      "code": ""
+    },
+	{
+      "name": "北京南站",
+      "key": "热门",
+      "first": "bjnz",
+      "full": "beijingnanzhan",
+      "code": "1001"
+    },
+    {
+      "name": "广州南站",
+      "key": "热门",
+      "first": "gznz",
+      "full": "guangzhounanzhan",
+      "code": "1021"
+    },
+    {
+      "name": "杭州东站",
+      "key": "热门",
+      "first": "hzdz",
+      "full": "hangzhoudongzhan",
+      "code": "1036"
+    },
+    {
+      "name": "杭州城站",
+      "key": "热门",
+      "first": "hzcz",
+      "full": "hangzhouchengzhan",
+      "code": "1037"
+    },
+    {
+      "name": "宁波站",
+      "key": "热门",
+      "first": "nbz",
+      "full": "ningbozhan",
+      "code": "1071"
+    },
+    {
+      "name": "南京南站",
+      "key": "热门",
+      "first": "njnz",
+      "full": "nanjingnanzhan",
+      "code": "1073"
+    },
+    {
+      "name": "深圳北站",
+      "key": "热门",
+      "first": "szbz",
+      "full": "shenzhenbeizhan",
+      "code": "1081"
+    },
+    {
+      "name": "上海虹桥站",
+      "key": "热门",
+      "first": "shhqz",
+      "full": "shanghaihongqiaozhan",
+      "code": "1082"
+    },
+    {
+      "name": "珠海高铁站",
+      "key": "热门",
+      "first": "zhgtz",
+      "full": "zhuhaigaotiezhan",
+      "code": "2025"
+    },
+    {
+      "name": "珠海拱北口岸",
+      "key": "热门",
+      "first": "zhgbka",
+      "full": "zhuhaigongbeikouan",
+      "code": "2026"
+    },
+    {
+      "name": "北京南站",
+      "key": "B",
+      "first": "bjnz",
+      "full": "beijingnanzhan",
+      "code": "1001"
+    },
+    {
+      "name": "长春西站",
+      "key": "C",
+      "first": "ccxz",
+      "full": "changchunxizhan",
+      "code": "1011"
+    },
+    {
+      "name": "广州南站",
+      "key": "G",
+      "first": "gznz",
+      "full": "guangzhounanzhan",
+      "code": "1021"
+    },
+    {
+      "name": "海口站",
+      "key": "H",
+      "first": "hkz",
+      "full": "haikouzhan",
+      "code": "1031"
+    },
+    {
+      "name": "汉口站",
+      "key": "H",
+      "first": "hkz",
+      "full": "hankouzhan",
+      "code": "1032"
+    },
+    {
+      "name": "合肥南站",
+      "key": "H",
+      "first": "hfnz",
+      "full": "hefeinanzhan",
+      "code": "1033"
+    },
+    {
+      "name": "哈尔滨西站",
+      "key": "H",
+      "first": "hebxz",
+      "full": "haerbinxizhan",
+      "code": "1034"
+    },
+    {
+      "name": "衡阳东站",
+      "key": "H",
+      "first": "hydz",
+      "full": "hengyangdongzhan",
+      "code": "1035"
+    },
+    {
+      "name": "杭州东站",
+      "key": "H",
+      "first": "hzdz",
+      "full": "hangzhoudongzhan",
+      "code": "1036"
+    },
+    {
+      "name": "杭州城站",
+      "key": "H",
+      "first": "hzcz",
+      "full": "hangzhouchengzhan",
+      "code": "1037"
+    },
+    {
+      "name": "济南西站",
+      "key": "J",
+      "first": "jnxz",
+      "full": "jinanxizhan",
+      "code": "1043"
+    },
+    {
+      "name": "昆明站",
+      "key": "K",
+      "first": "kmz",
+      "full": "kunmingzhan",
+      "code": "1051"
+    },
+    {
+      "name": "娄底南站",
+      "key": "L",
+      "first": "ldnz",
+      "full": "loudinanzhan",
+      "code": "1061"
+    },
+    {
+      "name": "宁波站",
+      "key": "N",
+      "first": "nbz",
+      "full": "ningbozhan",
+      "code": "1071"
+    },
+    {
+      "name": "南昌西站",
+      "key": "N",
+      "first": "ncxz",
+      "full": "nanchangxizhan",
+      "code": "1072"
+    },
+    {
+      "name": "南京南站",
+      "key": "N",
+      "first": "njnz",
+      "full": "nanjingnanzhan",
+      "code": "1073"
+    },
+    {
+      "name": "深圳北站",
+      "key": "S",
+      "first": "szbz",
+      "full": "shenzhenbeizhan",
+      "code": "1081"
+    },
+    {
+      "name": "上海虹桥站",
+      "key": "S",
+      "first": "shhqz",
+      "full": "shanghaihongqiaozhan",
+      "code": "1082"
+    },
+    {
+      "name": "太原南站",
+      "key": "T",
+      "first": "tynz",
+      "full": "taiyuannanzhan",
+      "code": "1091"
+    },
+    {
+      "name": "天津南站",
+      "key": "T",
+      "first": "tjnz",
+      "full": "tianjinnanzhan",
+      "code": "1092"
+    },
+    {
+      "name": "天津站",
+      "key": "T",
+      "first": "tjz",
+      "full": "tianjinzhan",
+      "code": "1093"
+    },
+    {
+      "name": "无锡新区站",
+      "key": "W",
+      "first": "wxxqz",
+      "full": "wuxixinquzhan",
+      "code": "2001"
+    },
+    {
+      "name": "武汉站",
+      "key": "W",
+      "first": "whz",
+      "full": "wuhanzhan",
+      "code": "2002"
+    },
+    {
+      "name": "厦门北站",
+      "key": "X",
+      "first": "xmbz",
+      "full": "xiamenbeizhan",
+      "code": "2003"
+    },
+    {
+      "name": "西宁站",
+      "key": "X",
+      "first": "xnz",
+      "full": "xiningzhan",
+      "code": "2004"
+    },
+	  
+    {
+      "name": "烟台站",
+      "key": "Y",
+      "first": "ytz",
+      "full": "yantaizhan",
+      "code": "2011"
+    },
+    {
+      "name": "义乌站",
+      "key": "Y",
+      "first": "ywz",
+      "full": "yiwuzhan",
+      "code": "2012"
+    },
+    {
+      "name": "永康南站",
+      "key": "Y",
+      "first": "yknz",
+      "full": "yongkangnanzhan",
+      "code": "2013"
+    },
+    {
+      "name": "营口东站",
+      "key": "Y",
+      "first": "ykdz",
+      "full": "yingkoudongzhan",
+      "code": "2014"
+    },
+    {
+      "name": "宜兴站",
+      "key": "Y",
+      "first": "yxz",
+      "full": "yixingzhan",
+      "code": "2015"
+    },
+    {
+      "name": "宜昌东站",
+      "key": "Y",
+      "first": "ycdz",
+      "full": "yichangdongzhan",
+      "code": "2016"
+    },
+    {
+      "name": "珠海高铁站",
+      "key": "Z",
+      "first": "zhgtz",
+      "full": "zhuhaigaotiezhan",
+      "code": "2025"
+    },
+    {
+      "name": "珠海拱北口岸",
+      "key": "Z",
+      "first": "zhgbka",
+      "full": "zhuhaigongbeikouan",
+      "code": "2026"
+    }
+  ]
+}

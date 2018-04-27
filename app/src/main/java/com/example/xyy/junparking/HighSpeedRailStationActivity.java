@@ -49,13 +49,12 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by XYY on 2018/4/26.
+ * Created by XYY on 2018/4/27.
  */
 
-public class NationalAirportActivity extends AppCompatActivity implements AbsListView.OnScrollListener {
-
+public class HighSpeedRailStationActivity extends AppCompatActivity implements AbsListView.OnScrollListener{
     //文件名称
-    private final static String CityFileName = "allcity.json";
+    private final static String CityFileName = "allrailstation.json";
 
     private String locationCity;
     private String curSelCity;
@@ -78,17 +77,17 @@ public class NationalAirportActivity extends AppCompatActivity implements AbsLis
 
     private Handler handler;
     private TextView overlay;               //对话框首字母TextView
-    private OverlayThread overlayThread;    //显示首字母对话框
+    private HighSpeedRailStationActivity.OverlayThread overlayThread;    //显示首字母对话框
     private boolean mReady = false;
     private boolean isScroll = false;
-    protected AirportListAdapter airportListAdapter;
-    protected SearchCityListAdapter searchCityListAdapter;
-    protected HotCityListAdapter hotCityListAdapter;
+    protected HighSpeedRailStationActivity.AirportListAdapter airportListAdapter;
+    protected HighSpeedRailStationActivity.SearchCityListAdapter searchCityListAdapter;
+    protected HighSpeedRailStationActivity.HotCityListAdapter hotCityListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.airport_layout);
+        setContentView(R.layout.highspeed_rail_layout);
         // 默认软键盘不弹出
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
@@ -119,10 +118,10 @@ public class NationalAirportActivity extends AppCompatActivity implements AbsLis
     private void initViews(){
         ViewBinder.bind(this);
         handler = new Handler();
-        overlayThread = new OverlayThread();
-        searchCityListAdapter = new SearchCityListAdapter(this, searchCityList);
+        overlayThread = new HighSpeedRailStationActivity.OverlayThread();
+        searchCityListAdapter = new HighSpeedRailStationActivity.SearchCityListAdapter(this, searchCityList);
         searchCityLv.setAdapter(searchCityListAdapter);
-        hotCityListAdapter = new HotCityListAdapter(this, hotCityList);
+        hotCityListAdapter = new HighSpeedRailStationActivity.HotCityListAdapter(this, hotCityList);
         locationCity = "杭州";
         curSelCity = locationCity;
     }
@@ -134,7 +133,7 @@ public class NationalAirportActivity extends AppCompatActivity implements AbsLis
         initTotalCityList();
         totalCityLv = (ListView) findViewById(R.id.total_city_lv);
         lettersLv = (LetterListView) findViewById(R.id.total_city_letters_lv);
-        airportListAdapter = new AirportListAdapter(NationalAirportActivity.this, totalCityList, hotCityList);
+        airportListAdapter = new HighSpeedRailStationActivity.AirportListAdapter(HighSpeedRailStationActivity.this, totalCityList, hotCityList);
         totalCityLv.setAdapter(airportListAdapter);
         totalCityLv.setOnScrollListener(this);
         totalCityLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -146,7 +145,7 @@ public class NationalAirportActivity extends AppCompatActivity implements AbsLis
                 }
             }
         });
-        lettersLv.setOnTouchingLetterChangedListener(new LetterListViewListener());
+        lettersLv.setOnTouchingLetterChangedListener(new HighSpeedRailStationActivity.LetterListViewListener());
         initOverlay();
     }
     @Override
@@ -216,7 +215,7 @@ public class NationalAirportActivity extends AppCompatActivity implements AbsLis
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             final TextView curCityNameTv;
-            ViewHolder holder;
+            HighSpeedRailStationActivity.AirportListAdapter.ViewHolder holder;
             int viewType = getItemViewType(position);
             if (viewType == 0){
                 convertView = inflater.inflate(R.layout.select_airport_location_item, null);
@@ -253,7 +252,7 @@ public class NationalAirportActivity extends AppCompatActivity implements AbsLis
                                 showSetCityDialog(locationCity, cityCode);
                             }else{
                                 //ToastUtils.show("当前定位城市" + curCityNameTv.getText().toString());
-                                Toast.makeText(NationalAirportActivity.this, "当前定位城市" + curCityNameTv.getText().toString().toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(HighSpeedRailStationActivity.this, "当前定位城市" + curCityNameTv.getText().toString().toString(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -261,9 +260,9 @@ public class NationalAirportActivity extends AppCompatActivity implements AbsLis
             }else if (viewType == 1){   //热门城市
                 convertView = inflater.inflate(R.layout.recent_city_item, null);
                 TextView tv_recent_tag = (TextView) convertView.findViewById(R.id.recent_city_tag);
-                tv_recent_tag.setText("热门城市机场/迪士尼");
+                tv_recent_tag.setText("热门城市高铁站/口岸");
                 GridView hotCityGv = (GridView) convertView.findViewById(R.id.recent_city_gv);
-                hotCityListAdapter = new HotCityListAdapter(NationalAirportActivity.this, hotCityList);
+                hotCityListAdapter = new HighSpeedRailStationActivity.HotCityListAdapter(HighSpeedRailStationActivity.this, hotCityList);
                 hotCityGv.setAdapter(hotCityListAdapter);
                 hotCityGv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
@@ -274,12 +273,12 @@ public class NationalAirportActivity extends AppCompatActivity implements AbsLis
                 });
             } else {
                 if (convertView == null){
-                    holder = new ViewHolder();
+                    holder = new HighSpeedRailStationActivity.AirportListAdapter.ViewHolder();
                     convertView = inflater.inflate(R.layout.city_list_item_layout, null);
                     ViewBinder.bind(holder, convertView);
                     convertView.setTag(holder);
                 }else {
-                    holder = (ViewHolder) convertView.getTag();
+                    holder = (HighSpeedRailStationActivity.AirportListAdapter.ViewHolder) convertView.getTag();
                 }
 
                 AirportEntity airportEntity = totalAirportList.get(position);
@@ -337,14 +336,14 @@ public class NationalAirportActivity extends AppCompatActivity implements AbsLis
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ViewHolder holder;
+            HighSpeedRailStationActivity.HotCityListAdapter.ViewHolder holder;
             if (convertView == null){
-                holder = new ViewHolder();
+                holder = new HighSpeedRailStationActivity.HotCityListAdapter.ViewHolder();
                 convertView = inflater.inflate(R.layout.city_list_grid_item_layout, null);
                 ViewBinder.bind(holder, convertView);
                 convertView.setTag(holder);
             }else{
-                holder = (ViewHolder) convertView.getTag();
+                holder = (HighSpeedRailStationActivity.HotCityListAdapter.ViewHolder) convertView.getTag();
             }
             AirportEntity airportEntity = airportEntities.get(position);
             holder.cityNameTv.setText(airportEntity.getName());
@@ -383,7 +382,7 @@ public class NationalAirportActivity extends AppCompatActivity implements AbsLis
             return;
         }
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(NationalAirportActivity.this);    //先得到构造器
+        AlertDialog.Builder builder = new AlertDialog.Builder(HighSpeedRailStationActivity.this);    //先得到构造器
         builder.setTitle("提示");
         builder.setMessage("是否设置" + curCity + "为您的当前城市？");  //设置内容
 
@@ -553,14 +552,14 @@ public class NationalAirportActivity extends AppCompatActivity implements AbsLis
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ViewHolder holder;
+            HighSpeedRailStationActivity.SearchCityListAdapter.ViewHolder holder;
             if (null == convertView) {
-                holder = new ViewHolder();
+                holder = new HighSpeedRailStationActivity.SearchCityListAdapter.ViewHolder();
                 convertView = inflater.inflate(R.layout.city_list_item_layout, null);
                 ViewBinder.bind(holder, convertView);
                 convertView.setTag(holder);
             } else {
-                holder = (ViewHolder) convertView.getTag();
+                holder = (HighSpeedRailStationActivity.SearchCityListAdapter.ViewHolder) convertView.getTag();
             }
 
             AirportEntity cityEntity = airportEntities.get(position);
