@@ -9,7 +9,7 @@ import org.litepal.crud.DataSupport;
 public class ParkingLot extends DataSupport {
     private int ParkingLotId;
     private String ParkingLotName;
-    private String ImageSrc;
+    private int ImageSrc;
     private double RatingScore;
     private int Sales;
     private String IsInRoom;
@@ -55,11 +55,11 @@ public class ParkingLot extends DataSupport {
         Distance = distance;
     }
 
-    public String getImageSrc() {
+    public int getImageSrc() {
         return ImageSrc;
     }
 
-    public void setImageSrc(String imageSrc) {
+    public void setImageSrc(int imageSrc) {
         ImageSrc = imageSrc;
     }
 

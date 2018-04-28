@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,9 +16,8 @@
         <ImageView
             android:id="@+id/img_parking_lot"
             android:layout_width="80dp"
-            android:layout_height="70dp"
-            android:scaleType="fitXY"
-            android:src="@mipmap/park1"/>
+            android:layout_height="80dp"
+            android:scaleType="fitXY"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +28,6 @@
                 android:id="@+id/tv_parkinglot_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="南苑机场宝加苑停车场"
                 android:textColor="#000"
                 />
 
@@ -43,14 +42,12 @@
                     android:id="@+id/tv_rating_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4.7分"
                     android:textColor="@color/light_blue"/>
                 <TextView
                     android:id="@+id/tv_sales"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="月销269单"
                     android:textSize="10dp"/>
             </LinearLayout>
 
@@ -63,7 +60,6 @@
                     android:id="@+id/tv_isinroom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="室内"
                     android:textSize="10dp"
                     android:textColor="#000"/>
                 <TextView
@@ -72,7 +68,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:textSize="10dp"
-                    android:text="距机场直线1.8公里"
                     android:textColor="#000"
                     />
             </LinearLayout>
@@ -83,6 +78,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:text="停车场备注信息"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxEms="10"
                 android:background="#eee"
                 android:textSize="10dp"/>
 
@@ -153,12 +151,11 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/tv_discount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/tv_discount_style"
                 android:layout_marginTop="3dp"
-                android:text="预付20元抵30元"
-                android:visibility="gone"
                 android:textColor="@color/orange_color"
                 android:textSize="9dp"/>
         </LinearLayout>
@@ -179,7 +176,6 @@
             android:layout_toLeftOf="@id/tv_jun"
             android:paddingRight="5dp"
             android:gravity="center_vertical"
-            android:text="27.5"
             android:textSize="20dp"
             android:textColor="@color/orange_color"/>
 
