@@ -1,5 +1,7 @@
 package com.example.xyy.dbhelper;
 
+import com.example.xyy.junparking.R;
+
 /**
  * Created by XYY on 2018/4/28.
  */
@@ -48,7 +50,7 @@ public class DBHelper {
         ParkingLot parkingLot1 = new ParkingLot();
         parkingLot1.setParkingLotId(10001);
         parkingLot1.setParkingLotName("北京机场新星亮点停车场");
-        parkingLot1.setImageSrc(1);
+        parkingLot1.setImageSrc(R.mipmap.park1);
         parkingLot1.setRatingScore(5);
         parkingLot1.setSales(119);
         parkingLot1.setIsInRoom("室外");
@@ -66,7 +68,7 @@ public class DBHelper {
         ParkingLot parkingLot2 = new ParkingLot();
         parkingLot2.setParkingLotId(10002);
         parkingLot2.setParkingLotName("首都泊安飞正元停车场");
-        parkingLot2.setImageSrc(2);
+        parkingLot2.setImageSrc(R.mipmap.park2);
         parkingLot2.setRatingScore(5);
         parkingLot2.setSales(221);
         parkingLot2.setIsInRoom("室外");
@@ -84,7 +86,7 @@ public class DBHelper {
         ParkingLot parkingLot3 = new ParkingLot();
         parkingLot3.setParkingLotId(10003);
         parkingLot3.setParkingLotName("萧山航杰停车场");
-        parkingLot3.setImageSrc(3);
+        parkingLot3.setImageSrc(R.mipmap.park3);
         parkingLot3.setRatingScore(4.8);
         parkingLot3.setSales(1890);
         parkingLot3.setIsInRoom("室内/室外");
@@ -102,7 +104,7 @@ public class DBHelper {
         ParkingLot parkingLot4 = new ParkingLot();
         parkingLot4.setParkingLotId(10004);
         parkingLot4.setParkingLotName("首都庞大叮叮泊车");
-        parkingLot4.setImageSrc(4);
+        parkingLot4.setImageSrc(R.mipmap.park4);
         parkingLot4.setRatingScore(4.8);
         parkingLot4.setSales(346);
         parkingLot4.setIsInRoom("室内");

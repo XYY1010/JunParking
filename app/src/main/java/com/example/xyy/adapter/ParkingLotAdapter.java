@@ -1,13 +1,16 @@
 package com.example.xyy.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.xyy.dbhelper.ParkingLot;
+import com.example.xyy.junparking.DetailShowActivity;
 import com.example.xyy.junparking.R;
 
 import java.util.List;
@@ -18,7 +21,6 @@ import java.util.List;
 
 public class ParkingLotAdapter extends RecyclerView.Adapter<ParkingLotAdapter.ViewHolder> {
     private List<ParkingLot> mParkingLotList;
-    private final int[] imgR= {R.mipmap.ic_launcher, R.mipmap.park1, R.mipmap.park2, R.mipmap.park3, R.mipmap.park4};
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         ImageView parkingLotImg;
@@ -34,6 +36,7 @@ public class ParkingLotAdapter extends RecyclerView.Adapter<ParkingLotAdapter.Vi
         TextView Service4;
         TextView Discount;
         TextView avgCost;
+        LinearLayout ll_parkinglot;
 
         public ViewHolder(View view){
             super(view);
@@ -50,6 +53,7 @@ public class ParkingLotAdapter extends RecyclerView.Adapter<ParkingLotAdapter.Vi
             Service4 = (TextView) view.findViewById(R.id.tv_service4);
             Discount = (TextView) view.findViewById(R.id.tv_discount);
             avgCost = (TextView) view.findViewById(R.id.tv_avg_cost);
+            ll_parkinglot = (LinearLayout) view.findViewById(R.id.ll_parking_lot_item);
         }
     }
 
@@ -60,7 +64,15 @@ public class ParkingLotAdapter extends RecyclerView.Adapter<ParkingLotAdapter.Vi
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.parking_lot_item, parent, false);
-        ViewHolder holder = new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
+        holder.ll_parkinglot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), DetailShowActivity.class);
+                intent.putExtra("ParkingLotName", holder.parkingLotName.getText().toString());
+                v.getContext().startActivity(intent);
+            }
+        });
         return holder;
     }
 
@@ -91,7 +103,7 @@ public class ParkingLotAdapter extends RecyclerView.Adapter<ParkingLotAdapter.Vi
         }
         holder.Discount.setText(parkingLotInfo.getDiscount());
         holder.avgCost.setText(String.valueOf(parkingLotInfo.getAvgPrice()));
-        holder.parkingLotImg.setImageResource(imgR[parkingLotInfo.getImageSrc()]);
+        holder.parkingLotImg.setImageResource(parkingLotInfo.getImageSrc());
     }
 
     @Override

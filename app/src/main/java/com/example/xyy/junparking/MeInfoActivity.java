@@ -27,7 +27,7 @@ public class MeInfoActivity extends AppCompatActivity {
 
     private ImageView old_img, blur_img;
     private Bitmap mBitmap, overlay;
-   private Toolbar toolbar;
+    private Toolbar toolbar;
     private CollapsingToolbarLayout collapsingToolbarLayout;
     private Button btn_save;
     private LinearLayout ll_head;
