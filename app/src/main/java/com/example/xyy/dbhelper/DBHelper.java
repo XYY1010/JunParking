@@ -47,6 +47,16 @@ public class DBHelper {
             station.save();
         }
 
+        AccountInfo accountInfo = new AccountInfo();
+        accountInfo.setUserId("17826875900");
+        accountInfo.setHeadImgSrc(R.mipmap.yuju);
+        accountInfo.setUserName("YuJu");
+        accountInfo.setCouponNum(0);
+        accountInfo.setAccountBalance(100);
+        accountInfo.setLoginPsw("123456789");
+        accountInfo.setPaymentPsw("123456");
+        accountInfo.save();
+
         ParkingLot parkingLot1 = new ParkingLot();
         parkingLot1.setParkingLotId(10001);
         parkingLot1.setParkingLotName("北京机场新星亮点停车场");

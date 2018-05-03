@@ -465,7 +465,8 @@
                     android:text="确认支付"
                     android:textColor="#FFF"
                     android:textSize="20dp"
-                    android:background="@color/light_blue"/>
+                    android:enabled="false"
+                    android:background="#BBB"/>
             </LinearLayout>
 
         </android.support.v4.widget.NestedScrollView>

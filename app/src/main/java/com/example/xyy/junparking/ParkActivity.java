@@ -102,7 +102,7 @@ public class ParkActivity extends AppCompatActivity {
         //bingPicImg = (ImageView) findViewById(R.id.bing_pic_img);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
+        final NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -117,16 +117,16 @@ public class ParkActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem item){
                 switch (item.getItemId()){
                     case R.id.nav_pocket:
-                        Toast.makeText(ParkActivity.this, "You checked your pocket", Toast.LENGTH_SHORT);
+                        Toast.makeText(navView.getContext(), "You checked your pocket", Toast.LENGTH_SHORT);
                         break;
                     case R.id.nav_wallet:
-                        Toast.makeText(ParkActivity.this, "You checked your wallet", Toast.LENGTH_SHORT);
+                        Toast.makeText(navView.getContext(), "You checked your wallet", Toast.LENGTH_SHORT);
                         break;
                     case R.id.nav_setting:
-                        Toast.makeText(ParkActivity.this, "You checked setting", Toast.LENGTH_SHORT);
+                        Toast.makeText(navView.getContext(), "You checked setting", Toast.LENGTH_SHORT);
                         break;
                     case R.id.nav_service:
-                        Toast.makeText(ParkActivity.this, "You checked service", Toast.LENGTH_SHORT);
+                        Toast.makeText(navView.getContext(), "You checked service", Toast.LENGTH_SHORT);
                         break;
                     default:
                 }

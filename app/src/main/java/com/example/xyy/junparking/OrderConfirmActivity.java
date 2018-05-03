@@ -19,6 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.xyy.dbhelper.AccountInfo;
+import com.example.xyy.dbhelper.OrderInfo;
 import com.example.xyy.dbhelper.ParkingLot;
 import com.example.xyy.publicclass.CustomDatePicker;
 import com.example.xyy.publicclass.PayPwdView;
@@ -29,7 +31,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
+import static com.example.xyy.junparking.R.mipmap.set;
 
 
 /**
@@ -56,9 +60,11 @@ public class OrderConfirmActivity extends AppCompatActivity implements PayPwdVie
     private int num;
     private Boolean isChoose1 = true;
 
+    private List<AccountInfo> accountInfoList;
+
     int[][] dayInMonthLeapYear = {{0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
             {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}};
-    int[] perPrice = {36, 72, 110, 143, 176, 209, 243};
+    int[] perPrice = {0, 36, 72, 110, 143, 176, 209, 243};
     int totalPrice;
     int needDay;
     int totalNumCars = 1;
@@ -90,6 +96,8 @@ public class OrderConfirmActivity extends AppCompatActivity implements PayPwdVie
         if (actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
+        accountInfoList = DataSupport.findAll(AccountInfo.class);
 
         ll_choose1 = (LinearLayout) findViewById(R.id.ll_choose1);
         ll_choose2 = (LinearLayout) findViewById(R.id.ll_choose2);
@@ -138,6 +146,8 @@ public class OrderConfirmActivity extends AppCompatActivity implements PayPwdVie
             @Override
             public void afterTextChanged(Editable s) {
                 if (pickingDate.getText() != ""){
+                    btnConfirmPayment.setBackgroundColor(getColor(R.color.light_blue));
+                    btnConfirmPayment.setEnabled(true);
                     needDay = calDay(parkingDate.getText().toString(),pickingDate.getText().toString());
                     totalNumCars = Integer.parseInt(Num.getText().toString().trim());
                     tvParkingMode.setText(parkingModeDes[isChoose1?0:1] + "停车" + String.valueOf(needDay) + "天");
@@ -173,6 +183,8 @@ public class OrderConfirmActivity extends AppCompatActivity implements PayPwdVie
             @Override
             public void afterTextChanged(Editable s) {
                 if (parkingDate.getText() != ""){
+                    btnConfirmPayment.setBackgroundColor(getColor(R.color.light_blue));
+                    btnConfirmPayment.setEnabled(true);
                     needDay = calDay(parkingDate.getText().toString(),pickingDate.getText().toString());
                     totalNumCars = Integer.parseInt(Num.getText().toString().trim());
                     tvParkingMode.setText(parkingModeDes[isChoose1?0:1] + "停车" + String.valueOf(needDay) + "天");
@@ -182,9 +194,9 @@ public class OrderConfirmActivity extends AppCompatActivity implements PayPwdVie
                         tvCal.setText("(" + String.valueOf(perPrice[needDay]) + " * " + Num.getText().toString()+ ")");
                         tvZongJia.setText(String.valueOf(totalPrice) + "元");
                     }else{
-                        tvDanJia.setText(String.valueOf((perPrice[6]+(needDay-7)*33))+"元");
-                        totalPrice =  (perPrice[6]+(needDay-7)*33) * totalNumCars;
-                        tvCal.setText("(" + String.valueOf((perPrice[6]+(needDay-7)*33)) + " * " + Num.getText().toString()+ ")");
+                        tvDanJia.setText(String.valueOf((perPrice[7]+(needDay-7)*33))+"元");
+                        totalPrice =  (perPrice[7]+(needDay-7)*33) * totalNumCars;
+                        tvCal.setText("(" + String.valueOf((perPrice[7]+(needDay-7)*33)) + " * " + Num.getText().toString()+ ")");
                         tvZongJia.setText(String.valueOf(totalPrice) + "元");
                     }
                     totalDingJin = totalNumCars * dingJin;
@@ -214,8 +226,8 @@ public class OrderConfirmActivity extends AppCompatActivity implements PayPwdVie
                         tvCal.setText("(" + String.valueOf(perPrice[needDay]) + " * " + Num.getText().toString()+ ")");
                         tvZongJia.setText(String.valueOf(totalPrice) + "元");
                     }else{
-                        totalPrice =  (perPrice[6]+(needDay-7)*33) * totalNumCars;
-                        tvCal.setText("(" + String.valueOf(perPrice[6]+(needDay-7)*33) + " * " + Num.getText().toString()+ ")");
+                        totalPrice =  (perPrice[7]+(needDay-7)*33) * totalNumCars;
+                        tvCal.setText("(" + String.valueOf(perPrice[7]+(needDay-7)*33) + " * " + Num.getText().toString()+ ")");
                         tvZongJia.setText(String.valueOf(totalPrice) + "元");
                     }
                     totalDingJin = totalNumCars * dingJin;
@@ -318,7 +330,7 @@ public class OrderConfirmActivity extends AppCompatActivity implements PayPwdVie
                     if (needDay <= 7) {
                         tvDanJia.setText(String.valueOf(perPrice[needDay])+"元");
                     }else{
-                        tvDanJia.setText(String.valueOf(perPrice[6]+(needDay-7)*33)+"元");
+                        tvDanJia.setText(String.valueOf(perPrice[7]+(needDay-7)*33)+"元");
                     }
                 }
                 break;
@@ -333,7 +345,7 @@ public class OrderConfirmActivity extends AppCompatActivity implements PayPwdVie
                     if (needDay <= 7) {
                         tvDanJia.setText(String.valueOf(perPrice[needDay])+"元");
                     }else{
-                        tvDanJia.setText(String.valueOf(perPrice[6]+(needDay-7)*33)+"元");
+                        tvDanJia.setText(String.valueOf(perPrice[7]+(needDay-7)*33)+"元");
                     }
                 }
                 break;
@@ -356,7 +368,43 @@ public class OrderConfirmActivity extends AppCompatActivity implements PayPwdVie
 
     @Override
     public void onInputFinish(String result) {
-        Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+        if (result.equals("123456")) {
+            if (accountInfoList.size()!=0) {
+                double accountBalance = accountInfoList.get(0).getAccountBalance();
+                if (totalPrice+totalDingJin>accountBalance) {
+                    Toast.makeText(this, "账户余额不足，请充值！！！", Toast.LENGTH_SHORT).show();
+                }else {
+                    String OrderNum = OrderNumGenerator();
+                    String StartTime = parkingDate.getText().toString();
+                    String EndTime = pickingDate.getText().toString();
+                    String state = "已支付";
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.CHINA);
+                    String paymentTime = sdf.format(new Date());
+                    OrderInfo orderInfo = new OrderInfo();
+                    orderInfo.setParkingLotName(tvParkingLotName.getText().toString());
+                    orderInfo.setStartTime(StartTime);
+                    orderInfo.setEndTime(EndTime);
+                    orderInfo.setOrderNum(OrderNum);
+                    orderInfo.setOrderState(state);
+                    orderInfo.setPaymentTime(paymentTime);
+                    orderInfo.setPrice(totalPrice+totalDingJin);
+                    orderInfo.setPhoneNum(accountInfoList.get(0).getUserId());
+                    if (isChoose1) {
+                        orderInfo.setIsInRoom("室内");
+                 }else {
+                        orderInfo.setIsInRoom("室外");
+                    }
+                    orderInfo.save();
+                    Toast.makeText(this, "支付成功！！！", Toast.LENGTH_SHORT).show();
+                    finish();
+                    Intent intent = new Intent(OrderConfirmActivity.this, OrderShowActivity.class);
+                    intent.putExtra("OrderNum", OrderNum);
+                    startActivity(intent);
+                }
+            }
+        } else {
+            Toast.makeText(this, "密码错误，支付失败！！！", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void initDatePicker(){
@@ -470,6 +518,15 @@ public class OrderConfirmActivity extends AppCompatActivity implements PayPwdVie
             }
         }
         return hour;
+    }
+
+    private String OrderNumGenerator(){
+        Random random = new Random();
+        int rand = random.nextInt(100);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmm", Locale.CHINA);
+        String time = sdf.format(new Date());
+        String randomNum = time+"00"+String.valueOf(rand);
+        return randomNum;
     }
 
 }

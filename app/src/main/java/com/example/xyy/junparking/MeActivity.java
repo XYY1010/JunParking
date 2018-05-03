@@ -12,7 +12,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.xyy.dbhelper.AccountInfo;
+
+import org.litepal.crud.DataSupport;
+
+import java.util.List;
 
 public class MeActivity extends AppCompatActivity {
 
@@ -21,16 +28,24 @@ public class MeActivity extends AppCompatActivity {
     private ImageView imgtabmsg;
     private ImageView imgtabme;
     private ImageView imgIcon;
+    private TextView tvUserName;
+    private TextView tvAccountBalanceNum;
+    private TextView tvCouponNum;
     private LinearLayout llcode;
     private LinearLayout llshare;
     private LinearLayout llhelp;
     private LinearLayout llfeedback;
+
+    private List<AccountInfo> accountInfoList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.me_layout);
 
+        tvUserName = (TextView) findViewById(R.id.username);
+        tvCouponNum = (TextView) findViewById(R.id.num1);
+        tvAccountBalanceNum = (TextView) findViewById(R.id.num2);
         imgtabhome = (ImageView) findViewById(R.id.imgtabhome4);
         imgtabcheck = (ImageView) findViewById(R.id.imgtabcheck4);
         imgtabmsg = (ImageView) findViewById(R.id.imgtabmsg4);
@@ -51,6 +66,14 @@ public class MeActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        accountInfoList = DataSupport.findAll(AccountInfo.class);
+        if (accountInfoList.size() != 0){
+            imgIcon.setImageResource(accountInfoList.get(0).getHeadImgSrc());
+            tvUserName.setText(accountInfoList.get(0).getUserName());
+            tvCouponNum.setText(String.valueOf(accountInfoList.get(0).getCouponNum()));
+            tvAccountBalanceNum.setText(String.valueOf(accountInfoList.get(0).getAccountBalance()));
+        }
 
         imgtabhome.setOnClickListener(new View.OnClickListener() {
             @Override
