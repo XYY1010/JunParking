@@ -119,5 +119,23 @@ public class DBHelper {
         parkingLot4.setDiscount("预付20元");
         parkingLot4.save();
 
+        ParkingLot parkingLot5 = new ParkingLot();
+        parkingLot5.setParkingLotId(10043);
+        parkingLot5.setParkingLotName("杭州东站升腾地下停车场");
+        parkingLot5.setImageSrc(R.mipmap.park4);
+        parkingLot5.setRatingScore(5);
+        parkingLot5.setSales(138);
+        parkingLot5.setIsInRoom("室内");
+        parkingLot5.setDistance("距高铁站直线80米");
+        parkingLot5.setRemarks("超时优惠：360分钟免费。");
+        parkingLot5.setAvgPrice((float) 21.7);
+        parkingLot5.setCityName("杭州东站");
+        parkingLot5.setService1(true);
+        parkingLot5.setService2(false);
+        parkingLot5.setService3(true);
+        parkingLot5.setService4(false);
+        parkingLot5.setDiscount("预付10元");
+        parkingLot5.save();
+
     }
 }

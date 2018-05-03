@@ -201,5 +201,25 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".OrderConfirmActivity"
+            android:label="确认订单"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LicenseActivity"
+            android:label="车牌号"
+            android:theme="@style/ParkActivityTheme">
+            <intent-filter>
+                <action android:name="com.example.xyy.junparking.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

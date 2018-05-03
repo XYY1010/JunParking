@@ -1,5 +1,6 @@
 package com.example.xyy.junparking;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -102,7 +103,9 @@ public class MeInfoActivity extends AppCompatActivity {
         ll_platenum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MeInfoActivity.this, "您点击了车牌号修改", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MeInfoActivity.this, "您点击了车牌号修改", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MeInfoActivity.this, LicenseActivity.class);
+                startActivity(intent);
             }
         });
     }

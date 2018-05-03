@@ -2,6 +2,7 @@ package com.example.xyy.junparking;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.os.Build;
@@ -384,13 +385,17 @@ public class HighSpeedRailStationActivity extends AppCompatActivity implements A
 
         AlertDialog.Builder builder = new AlertDialog.Builder(HighSpeedRailStationActivity.this);    //先得到构造器
         builder.setTitle("提示");
-        builder.setMessage("是否设置" + curCity + "为您的当前城市？");  //设置内容
+        builder.setMessage("是否设置" + curCity + "为您的目的城市？");  //设置内容
 
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
                 //选中后做你的方法
+                Intent intent = new Intent(HighSpeedRailStationActivity.this, ParkingLotActivity.class);
+                intent.putExtra("CityName", curCity);
+                intent.putExtra("CityCode", cityCode);
+                startActivity(intent);
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {

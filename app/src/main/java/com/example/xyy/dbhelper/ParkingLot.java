@@ -15,7 +15,7 @@ public class ParkingLot extends DataSupport {
     private String IsInRoom;
     private String Distance;
     private String Remarks;
-    private int AvgPrice;
+    private float AvgPrice;
     private String CityName;
     private boolean Service1;
     private boolean Service2;
@@ -23,11 +23,11 @@ public class ParkingLot extends DataSupport {
     private boolean Service4;
     private String Discount;
 
-    public int getAvgPrice() {
+    public float getAvgPrice() {
         return AvgPrice;
     }
 
-    public void setAvgPrice(int avgPrice) {
+    public void setAvgPrice(float avgPrice) {
         AvgPrice = avgPrice;
     }
 

@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.xyy.dbhelper.ParkingLot;
@@ -64,6 +65,14 @@ public class DetailShowActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
         initView();
+        btnBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1  = new Intent(DetailShowActivity.this, OrderConfirmActivity.class);
+                intent1.putExtra("ParkingLotName", ParkingLotName);
+                startActivity(intent1);
+            }
+        });
     }
 
     @Override
