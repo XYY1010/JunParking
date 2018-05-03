@@ -77,7 +77,7 @@ public class OrderShowActivity extends AppCompatActivity {
         orderInfoList = DataSupport.where("OrderNum = ?", OrderNum).find(OrderInfo.class);
         tvOrderNum.setText(OrderNum);
         tvParkingLotName.setText(orderInfoList.get(0).getParkingLotName());
-        tvIsInRoom.setText(orderInfoList.get(0).getParkingLotName());
+        tvIsInRoom.setText(orderInfoList.get(0).getIsInRoom());
         tvParkingTime.setText(orderInfoList.get(0).getStartTime());
         tvPickingTime.setText(orderInfoList.get(0).getEndTime());
         tvPrice.setText(String.valueOf(orderInfoList.get(0).getPrice())+"元");
