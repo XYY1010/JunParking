@@ -47,6 +47,36 @@ public class DBHelper {
             station.save();
         }
 
+        String[] cityName = {"阿克苏", "阿勒泰", "安康", "安庆", "鞍山", "安顺", "安阳", "百色", "保山", "包头", "北海", "北京", "蚌埠",
+                "长春", "常德", "昌都", "长海", "长沙", "长治", "常州", "朝阳", "潮州", "成都", "赤峰", "重庆", "大理", "大连", "丹东", "大同",
+                "达县", "大足", "迪庆", "东胜", "东营", "敦煌", "恩施", "佛山", "阜阳", "富蕴", "福州", "赣州", "格尔木", "广汉", "广州", "冠豸山",
+                "桂林", "贵阳", "哈尔滨", "海口", "海拉尔", "哈密", "杭州", "汉中", "合肥", "黑河", "衡阳", "和田", "黄山", "黄岩", "呼和浩特", "徽州",
+                "佳木斯", "吉安", "嘉峪关", "吉林", "济南", "景德镇", "景洪", "济宁", "晋江", "锦州", "九江", "酒泉", "九寨沟", "喀什", "克拉玛依",
+                "库车", "库尔勒", "昆明", "兰州", "拉萨", "梁平", "连云港", "丽江", "林西", "临沂", "梨山", "柳州", "洛阳", "庐山", "泸州", "马公", "芒市",
+                "满州里", "梅县", "绵阳", "牡丹江", "南昌", "南充", "南京", "南宁", "南通", "南阳", "宁波", "攀枝花", "且末", "青岛", "庆阳", "秦皇岛",
+                "齐齐哈尔", "衢州", "三亚", "上海虹桥", "上海浦东", "鄯善", "汕头", "荆沙", "沈阳", "深圳", "石家庄", "思茅", "苏州", "塔城", "太原",
+                "天津", "通化", "通辽", "铜仁", "万县", "潍坊", "威海", "维也纳", "温州", "乌海", "武汉", "芜湖", "乌兰浩特", "乌鲁木齐", "无锡", "武夷山",
+                "梧州", "厦门", "西安", "襄樊", "咸阳", "西昌", "锡林浩特", "兴城", "兴宁", "邢台", "兴义", "西宁", "徐州", "延安", "盐城", "延吉", "烟台",
+                "宜宾", "宜昌", "银川", "伊宁", "义乌", "永州", "元谋", "榆林", "运城", "张家界", "湛江", "昭通", "郑州", "芷江", "中甸", "舟山", "珠海",
+                "遵义"};
+
+        String[] cityCode = {"AKU", "AAT", "AKA", "AQG", "AOG", "AVA", "AYN", "AEB", "BSD", "BAV", "BHY", "PEK", "BFU", "CGQ", "CGD", "BPX", "CNI", "CSX",
+                "CIH", "CZX", "CHG", "CCC", "CTU", "CIF", "CKG", "DLU", "DLC", "DDG", "DAT", "DZU", "DIG", "DAX", "DSN", "DOY", "DNH", "ENH", "FUO", "FUG",
+                "FYN", "FOC", "KOW", "GOQ", "GHN", "CAN", "LCX", "KWL", "KWE", "HRB", "HAK", "HLD", "HMI", "HGH", "HZG", "HFE","HEK", "HNY", "HTN", "TXN",
+                "HYN", "HET", "HUZ", "JMU", "KNC", "JGN", "JIL", "TNA", "JDZ", "JHG", "JNG", "JJN", "JNZ", "JIU", "CHW", "JZH", "KHG", "KRY", "KCA", "KRL",
+                "KMG", "LHW", "LXA", "LIA", "LYG", "LJG", "LXI", "LYI", "LHN", "LZH", "LYA", "LUZ", "LZO", "MZG", "LUM", "NZH", "MXZ", "MIG", "MDG", "KHN",
+                "NAO", "NKG", "NNG", "NTG", "NNY", "NGB", "PZI", "TAO", "IQM", "IQN", "SHP", "NDG", "JUZ", "SYX", "SHA", "PVG", "SXJ", "SWA", "SHS", "SHE",
+                "SZX", "SJW", "SYM", "SZV", "TCG", "TYN", "TSN", "TNH", "TGO", "TEN", "WXN", "WEF", "WEH", "VIE", "WNZ", "WUA", "WUH", "WHU", "HLH", "URC",
+                "WUX", "WUS", "WUZ", "XMN", "XIY", "XFN", "SIA", "XIC", "XIL", "XEN", "XIN", "XNT", "ACX", "XNN", "XUZ", "ENY", "YNZ", "YNJ", "YNT", "YBP",
+                "YIH", "INC", "YIN", "YIW", "LLF", "YUA", "UYN", "YCU", "DYG", "ZHA", "ZAT", "CGO", "HJJ", "DIQ", "HSN", "ZUH", "ZYI"};
+        for (int i = 0; i<cityName.length; i++) {
+            CityName city = new CityName();
+            city.setCityName(cityName[i]);
+            city.setCityCode(cityCode[i]);
+            city.save();
+        }
+
+
         AccountInfo accountInfo = new AccountInfo();
         accountInfo.setUserId("17826875900");
         accountInfo.setHeadImgSrc(R.mipmap.yuju);

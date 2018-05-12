@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDepCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="杭州萧山"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20dp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/tvDepTerminal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="T3航站楼"/>
+
+            <TextView
+            android:id="@+id/tvDepScheduled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="2018-05-12"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/light_blue"/>
+
+            <TextView
+                android:id="@+id/tvDepTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="07:20:00"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/light_blue"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvFlightNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="MF4223"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="---------------->"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvArrCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="杭州萧山"
+                android:layout_gravity="center_horizontal"
+                android:textSize="20dp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/tvArrTerminal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="T3航站楼"/>
+
+            <TextView
+                android:id="@+id/tvArrScheduled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="2018-05-12"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/light_blue"/>
+
+            <TextView
+                android:id="@+id/tvArrTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="07:20:00"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/light_blue"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tvFlightState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="航班状态：起飞"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="10dp"
+            android:textColor="@color/orange_color"/>
+
+        <TextView
+            android:id="@+id/tvArrRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="准点抵达概率：80%"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="10dp"
+            android:textColor="@color/orange_color"/>
+
+        <TextView
+            android:id="@+id/tvRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="评分：80"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/orange_color"
+            android:textSize="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

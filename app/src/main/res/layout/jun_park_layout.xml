@@ -223,6 +223,7 @@
                         android:orientation="horizontal"
                         >
                         <LinearLayout
+                            android:id="@+id/ll_shuttle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"

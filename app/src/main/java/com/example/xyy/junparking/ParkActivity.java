@@ -62,6 +62,7 @@ public class ParkActivity extends AppCompatActivity {
     private ImageView imgtabme1;
     private LinearLayout ll_airport;
     private LinearLayout ll_highrail;
+    private LinearLayout ll_shuttle;
     private DBHelper dbHelper;
 
     @Override
@@ -94,6 +95,7 @@ public class ParkActivity extends AppCompatActivity {
         imgtabme1 = (ImageView) findViewById(R.id.imgtabme1);
         ll_airport = (LinearLayout) findViewById(R.id.ll_airport);
         ll_highrail = (LinearLayout) findViewById(R.id.ll_highrail);
+        ll_shuttle = (LinearLayout) findViewById(R.id.ll_shuttle);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -262,6 +264,14 @@ public class ParkActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ParkActivity.this, HighSpeedRailStationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ll_shuttle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ParkActivity.this, ShuttleActivity.class);
                 startActivity(intent);
             }
         });

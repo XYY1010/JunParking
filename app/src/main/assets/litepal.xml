@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <litepal>
 	<dbname value="AirportParking"></dbname>
-	<version value="7"></version>
+	<version value="8"></version>
 	
 	<list>
 	<mapping class="com.example.xyy.dbhelper.Airport"></mapping>
@@ -9,5 +9,6 @@
 	<mapping class="com.example.xyy.dbhelper.ParkingLot"></mapping>
 	<mapping class="com.example.xyy.dbhelper.AccountInfo"></mapping>
 	<mapping class="com.example.xyy.dbhelper.OrderInfo"></mapping>
+	<mapping class="com.example.xyy.dbhelper.CityName"></mapping>
 	</list>
 </litepal>
