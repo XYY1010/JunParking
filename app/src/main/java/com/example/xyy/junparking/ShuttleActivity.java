@@ -12,7 +12,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
+import static com.example.xyy.junparking.R.mipmap.flight;
 
 /**
  * Created by XYY on 2018/5/9.
@@ -21,6 +29,11 @@ import android.widget.Toast;
 public class ShuttleActivity extends AppCompatActivity implements View.OnClickListener{
 
     private LinearLayout ll_flight;
+    private TextView tvTime;
+    private static String now;
+    private TextView tvFlightNo;
+    private TextView tvFlight1;
+    private TextView tvFlight2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,7 +57,15 @@ public class ShuttleActivity extends AppCompatActivity implements View.OnClickLi
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
+        tvFlightNo = (TextView) findViewById(R.id.tv_FlightNo);
+        tvFlight1 = (TextView) findViewById(R.id.tvFlight1);
+        tvFlight2 = (TextView) findViewById(R.id.tvFlight2);
+        tvTime = (TextView) findViewById(R.id.tvTime);
         ll_flight = (LinearLayout) findViewById(R.id.ll_flight);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.CHINA);
+        now = sdf.format(new Date());
+        tvTime.setText(now);
 
         ll_flight.setOnClickListener(this);
     }
@@ -72,7 +93,27 @@ public class ShuttleActivity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()){
             case R.id.ll_flight:
                 Intent intent = new Intent(ShuttleActivity.this, FlightSearchActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
+                break;
+            default:
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode){
+            case 1:
+                if (resultCode == RESULT_OK){
+                    String FlightNo = data.getStringExtra("FlightNo");
+                    String ArrScheduled = data.getStringExtra("ArrScheduled");
+                    tvFlightNo.setText("航班号：" + FlightNo);
+                    tvFlightNo.setVisibility(View.VISIBLE);
+                    tvFlight1.setVisibility(View.GONE);
+                    tvFlight2.setVisibility(View.GONE);
+                    String[] strArr = ArrScheduled.split("T");
+                    String strTime = strArr[0]+" "+strArr[1];
+                    tvTime.setText(strTime);
+                }
                 break;
             default:
         }

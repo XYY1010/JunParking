@@ -43,11 +43,25 @@
                 android:layout_marginLeft="25dp"
                 android:src="@mipmap/flight"/>
 
+            <TextView
+                android:id="@+id/tv_FlightNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="18dp"
+                android:text="航班号：MC2020"
+                android:textSize="20dp"
+                android:textColor="@color/orange_color"
+                android:visibility="gone"
+                />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
                     android:orientation="vertical">
                     <TextView
+                        android:id="@+id/tvFlight1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -56,6 +70,7 @@
                         android:text="航班号"
                         />
                     <TextView
+                        android:id="@+id/tvFlight2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="航班延误，免费等待"
@@ -64,6 +79,7 @@
                         android:layout_marginBottom="5dp"
                         android:textSize="15dp"
                         />
+
                 </LinearLayout>
 
             <LinearLayout
@@ -107,6 +123,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/tvTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -114,7 +131,7 @@
                     android:layout_gravity="center_vertical"
                     android:textSize="30dp"
                     android:text="2018-04-29 21:22"
-                    android:textColor="#000"
+                    android:textColor="@color/highLight"
                     />
             </LinearLayout>
 
